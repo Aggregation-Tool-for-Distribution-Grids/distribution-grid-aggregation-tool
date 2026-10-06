@@ -29,7 +29,7 @@ The underlying methodology is based on:
     * `network`: The input pandapowerNet instance.
     * `threshold`: Maximum allowable voltage magnitude deviation in p.u.
     * `show_network`: Boolean flag (`True`/`False`) to visually render the grid before reduction.
-5. Execute and Review Results: Run the script to perform the network reduction:
+5. **Execute and Review Results**: Run the script to perform the network reduction:
 
 ```
 orig_adj, A_adj, num_nodes, slack_buses, active_supernodes, clusters, Y_kron, metrics = opti_kron_single_phase(
