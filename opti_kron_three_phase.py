@@ -337,7 +337,7 @@ def opti_kron_three_phase(network, threshold, show_network=True):
         f"({100 * (num_nodes - len(active_supernodes)) / num_nodes:.2f}% reduced)\n"
     )
 
-    return orig_adj, A_adj, num_nodes, slack_buses, active_supernodes, clusters, Y_kron
+    return orig_adj, adj, num_nodes, slack_buses, active_supernodes, clusters, Y_kron
 
 
 # start time
@@ -349,7 +349,7 @@ network = pn.ieee_european_lv_asymmetric()
 # run function
 orig_adj, A_adj, num_nodes, slack_buses, active_supernodes, clusters, Y_kron = opti_kron_three_phase(
     network,
-    threshold=1e-4,
+    threshold=0.005,
     show_network=False
 )
 
