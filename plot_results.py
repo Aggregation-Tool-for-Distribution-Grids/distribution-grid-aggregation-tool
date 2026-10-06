@@ -36,7 +36,7 @@ def plot_results(
     G_orig.remove_nodes_from(list(nx.isolates(G_orig)))
 
     # determining node coordinates
-    pos = nx.spring_layout(G_orig, seed=42)
+    pos = nx.nx_agraph.graphviz_layout(G_orig, prog="dot", root=slack_buses[0])
 
     # colours for nodes
     # - red: slack node
@@ -51,7 +51,6 @@ def plot_results(
             orig_node_colors.append('blue')
 
     # draw original graph
-
     nx.draw_networkx_nodes(
         G_orig,
         pos,
@@ -93,7 +92,7 @@ def plot_results(
     G_red.remove_nodes_from(list(nx.isolates(G_red)))
 
     # determining node coordinates
-    pos = nx.spring_layout(G_red)
+    pos = nx.nx_agraph.graphviz_layout(G_red, prog="dot", root=slack_buses[0])
 
     red_node_colors = []
     for node in G_red.nodes():
